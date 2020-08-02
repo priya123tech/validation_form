@@ -15,37 +15,66 @@
           <br>
           <h3 class="text-success text-center text-uppercase font-weight-bold"><em><ins> Registartion  Forms </ins></em> </h3>
           <br>
-          <div class="col-lg-8 m-auto d-block">
+          <div class="col-lg-9 m-auto d-block">
               <form action="#" onsubmit="return validation()" class="bg-light">
-                <div class="form-group">
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                    <label> Name: </label>
+                    </div>
+                    <div class="col-sm-9">
+                    <input type="text" name='name' class="form-control" id="name" autocomplete="off"></input>
+                    <span id="name_" class="text-danger font-weight-normal"></span>
+                    </div>
+                </div> 
+                <div class="form-group row">
+                    <div class="col-sm-2">
                     <label> Username: </label>
-                    <input type="text" name="user" class="form-control" id="user" autocomplete="off"></input>
+                    </div>
+                    <div class="col-sm-9">
+                    <input type="password" name="user" class="form-control" id="user" autocomplete="off"></input>
                     <span id="username" class="text-danger font-weight-normal"></span>
                 </div>  
+            </div>
                 
-                    <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-2">
                         <label> Password: </label>
-                        <input type="text" name="pass" class="form-control" id="pass" autocomplete="off"></input>
+                        </div>
+                        <div class="col-sm-9">
+                        <input type="password" name="pass" class="form-control" id="pass" autocomplete="off"></input>
                         <span id="password" class="text-danger font-weight-normal"></span>
                     </div>  
+                </div>
                 
-                    <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-2">
                         <label> Confirm Password: </label>
+                    </div>
+                        <div class="col-sm-9">
                         <input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off"></input>
                         <span id="conpassword" class="text-danger font-weight-normal"></span>
-                    </div>         
+                    </div>  
+                </div>       
                 
-                    <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-2">
                         <label> Mobile Number.: </label>
+                    </div>
+                        <div class="col-sm-9">
                         <input type="text" name="mobile" class="form-control" id="mobile" autocomplete="off"></input>
                         <span id="mobileno" class="text-danger font-weight-normal"></span>
                     </div>  
+                </div>
 
-                    <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-2">
                         <label> Email: </label>
+                    </div>
+                        <div class="col-sm-9">
                         <input type="text" name="email" class="form-control" id="email" autocomplete="off"></input>
                         <span id="emailid" class="text-danger font-weight-normal"></span>
-                    </div>  
+                    </div>
+                </div>  
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -58,11 +87,17 @@
 
     <script>
         function validation(){
+            var name= document.getElementById('name').value 
             var user= document.getElementById('user').value 
             var pass= document.getElementById('pass').value 
             var conpass= document.getElementById('conpass').value 
             var mobile= document.getElementById('mobile').value 
             var email= document.getElementById('email').value 
+            if (name=="")
+            {
+                document.getElementById('name_').innerHTML="**Please fill the Name field"
+                return false
+            }
             if (user=="")
             {
                 document.getElementById('username').innerHTML="**Please fill the username field"
